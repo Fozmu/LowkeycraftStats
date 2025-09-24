@@ -1,0 +1,63 @@
+# LowkeycraftStats Configuration
+# Real-time player statistics tracking plugin
+
+database:
+  # Database type: sqlite or mysql
+  type: sqlite
+  # SQLite file location (relative to plugin folder)
+  file: stats.db
+
+  # MySQL settings (only used if type is mysql)
+  mysql:
+    host: localhost
+    port: 3306
+    database: lowkeycraft_stats
+    username: stats
+    password: password123
+
+web-server:
+  # Enable web API server
+  enabled: true
+  # Port for web API (make sure this is open on your server)
+  port: 8080
+  # Enable CORS for web requests
+  cors: true
+  # API key for secure endpoints (optional)
+  api-key: ""
+
+tracking:
+  # Track player inventory contents
+  inventory: true
+  # Track player location/coordinates
+  location: true
+  # Track player health and food
+  health-food: true
+  # Update interval in seconds for real-time data
+  update-interval: 30
+
+statistics:
+  # Basic stats to track
+  playtime: true
+  blocks-broken: true
+  blocks-placed: true
+  deaths: true
+  player-kills: true
+  mob-kills: true
+  distance-traveled: true
+  items-crafted: true
+  food-consumed: true
+
+  # Advanced tracking
+  achievements: false
+  economy: false # Requires Vault plugin
+
+messages:
+  # Chat messages
+  prefix: "&a[LowkeycraftStats]&f"
+  no-permission: "&cYou don't have permission to use this command."
+  player-not-found: "&cPlayer not found or has never joined the server."
+  stats-header: "&6=== Stats for {player} ==="
+  reload-success: "&aConfiguration reloaded successfully!"
+
+# Debug mode - enables detailed logging
+debug: false
